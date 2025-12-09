@@ -1,16 +1,18 @@
 // HeroSection.jsx
-import Aquarius from "../assets/images/zodiac/Aquarius.png";
-import aries from "../assets/images/zodiac/aries.png";
-import Cancer from "../assets/images/zodiac/Cancer.png";
-import Capricorn from "../assets/images/zodiac/Capricorn.png";
-import gemini from "../assets/images/zodiac/gemini.png";
-import Leo from "../assets/images/zodiac/Leo.png";
-import Libra from "../assets/images/zodiac/Libra.png";
-import Pisces from "../assets/images/zodiac/Pisces.png";
-import Sagittarius from "../assets/images/zodiac/Sagittarius.png";
-import Scorpio from "../assets/images/zodiac/Scorpio.png";
-import Taurus from "../assets/images/zodiac/Taurus.png";
-import Virgo from "../assets/images/zodiac/Virgo.png";
+// HeroSection.jsx (TOP imports)
+import Aquarius from "../assets/zodiac/Aquarius.png";
+import aries from "../assets/zodiac/aries.png";
+import Cancer from "../assets/zodiac/Cancer.png";
+import Capricorn from "../assets/zodiac/Capricorn.png";
+import gemini from "../assets/zodiac/gemini.png";
+import Leo from "../assets/zodiac/Leo.png";
+import Libra from "../assets/zodiac/Libra.png";
+import Pisces from "../assets/zodiac/Pisces.png";
+import Sagittarius from "../assets/zodiac/Sagittarius.png";
+import Scorpio from "../assets/zodiac/Scorpio.png";
+import Taurus from "../assets/zodiac/Taurus.png";
+import Virgo from "../assets/zodiac/Virgo.png";
+
 
 const ZODIAC_ICONS = [
   { name: "Aquarius", icon: Aquarius },
@@ -27,10 +29,7 @@ const ZODIAC_ICONS = [
   { name: "Virgo", icon: Virgo },
 ];
 
-/**
- * positionPreset array — desktop-first coordinates (percentage),
- * and size (tailwind width class) + opacity + animation delay.
- */
+
 const positionPreset = [
   { top: "6%", left: "8%", size: "w-14", opacity: 0.18, delay: 0 },
   { top: "10%", left: "28%", size: "w-12", opacity: 0.2, delay: 0.8 },
