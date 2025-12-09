@@ -1,49 +1,113 @@
+
+import mainImg from "../assets/images/main.png";
+
+
 export default function GuruSection() {
   return (
     <section id="guru" className="bg-cream py-16">
-      <div className="mx-auto max-w-6xl px-4 grid gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] items-center">
+      <div className="mx-auto max-w-7xl px-4 grid gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] items-center">
+        {/* image side */}
         {/* image side */}
         <div className="flex justify-center animate-slide-left">
-          <div className="relative h-80 w-60 overflow-hidden rounded-3xl border border-primary/40 bg-[url('/images/guru.jpg')] bg-cover bg-center shadow-xl">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <span className="absolute left-3 top-3 rounded-full bg-accent px-3 py-1 text-[10px] font-semibold text-secondary">
-              5★ Rated Spiritual Guide
-            </span>
-            <div className="absolute bottom-3 left-3 text-[11px] text-cream">
-              <p className="font-semibold text-accent">Astro Gopala Ji</p>
-              <p>Vedic Astrologer & Bhagawat Katha Vachak</p>
+          <div className="relative h-96 w-72 overflow-hidden rounded-[32px] shadow-2xl">
+
+            {/* main image */}
+            <img
+              src={mainImg}
+              alt="Astro Gopala Ji"
+              className="h-full w-full object-cover"
+            />
+
+            {/* overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+
+            {/* left vertical ribbon */}
+            <div className="absolute left-3 top-1/2 -translate-y-1/2">
+              <div className="relative">
+                <div className="h-32 w-10 rounded-xl bg-primary flex items-center justify-center">
+                  <p className="rotate-[-90deg] text-[11px] tracking-widest font-semibold text-white">
+                    EXPERIENCE & TRUST
+                  </p>
+                </div>
+
+                {/* corner accents */}
+                <span className="absolute -top-2 -right-2 h-3 w-3 bg-accent rounded-sm" />
+                <span className="absolute -bottom-2 -left-2 h-3 w-3 bg-accent rounded-sm" />
+              </div>
+            </div>
+
+            {/* top experience badge */}
+            <div className="absolute right-4 top-4">
+              <div className="relative rounded-xl bg-gradient-to-br from-red-600 to-orange-500 px-4 py-3 text-white shadow-lg">
+                <p className="text-xl font-extrabold leading-none">5+</p>
+                <p className="text-[11px] uppercase tracking-wide">
+                  Years<br />Experience
+                </p>
+              </div>
+            </div>
+
+            {/* bottom name */}
+            <div className="absolute bottom-4 left-4 right-4 rounded-xl bg-black/40 px-4 py-2 backdrop-blur-md">
+              <p className="text-sm font-semibold text-accent">
+                Astro Gopala Ji
+              </p>
+              <p className="text-[11px] text-cream">
+                Astrology • Numerology • Spiritual Guidance
+              </p>
             </div>
           </div>
         </div>
 
+
         {/* content side */}
         <div className="animate-slide-right">
+          {/* small heading */}
           <p className="text-[11px] uppercase tracking-[0.3em] text-primary">
-            About Our Guru
-          </p>
-          <h2 className="mt-2 font-heading text-2xl md:text-3xl text-secondary">
-            A Compassionate Guide on Your Spiritual & Life Journey
-          </h2>
-          <p className="mt-3 text-xs md:text-sm text-slate-700 leading-relaxed">
-            Gopala Ji blends deep scriptural wisdom with practical
-            understanding of modern life. From Bhagawat Katha to birth chart
-            reading, every session is focused on inner peace, clarity of mind
-            and karmic healing.
+            Unlock Your Destiny With Expert Astrology, Numerology &amp; Spiritual Guidance
           </p>
 
-          <ul className="mt-4 grid gap-2 text-xs text-slate-700 md:grid-cols-2">
-            <li>• 25+ years of experience in Vedic astrology & satsang.</li>
-            <li>• Conducted Bhagawat Kathas across India & overseas.</li>
-            <li>• Special focus on family, career and relationship healing.</li>
-            <li>• Sessions available in Hindi & English (online/offline).</li>
+          {/* main heading */}
+          <h2 className="mt-2 font-heading text-2xl md:text-3xl text-secondary">
+            About Astro Gopala – Your Trusted Guide To Astrology &amp; Spiritual Wisdom
+          </h2>
+
+          {/* description */}
+          <p className="mt-3 text-xs md:text-sm text-slate-700 leading-relaxed">
+            At Astro Gopala, we are dedicated to guiding you through the mystical
+            world of astrology, numerology, and spiritual sciences. With years of
+            experience and deep Vedic knowledge, our expert astrologers provide
+            accurate predictions, personalized insights, and effective remedies to
+            help you overcome life’s challenges.
+          </p>
+
+          {/* sub-heading line */}
+          <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
+            Unlock The Power Of Astrology With Astro Gopala
+          </p>
+
+          {/* bullet list */}
+          <ul className="mt-3 grid gap-2 text-xs text-slate-700 md:grid-cols-2">
+            <li>• Accurate Kundali Analysis</li>
+            <li>• Personalized Horoscope Readings</li>
+            <li>• Kundali Matching For Marriage</li>
+            <li>• More</li>
           </ul>
 
-          <div className="mt-5 flex flex-wrap gap-3 text-xs">
+          {/* contact + button */}
+          <div className="mt-6 flex flex-wrap items-center gap-4 text-xs">
+            <div className="flex items-center gap-2">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-cream text-[13px]">
+                ☎
+              </span>
+              <div className="leading-tight text-slate-800">
+                <p className="font-semibold">
+                  +91 9897892951 , 9462820179
+                </p>
+              </div>
+            </div>
+
             <button className="rounded-full bg-primary px-5 py-2 font-semibold text-white shadow hover:bg-primary/90">
-              Meet Gopala Ji
-            </button>
-            <button className="rounded-full border border-secondary px-4 py-2 text-secondary hover:bg-secondary/5">
-              Watch Katha Highlights
+              More About Us
             </button>
           </div>
         </div>

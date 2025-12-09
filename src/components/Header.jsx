@@ -1,5 +1,6 @@
 // src/components/Header.jsx
 import { useEffect, useState } from "react";
+import logo from "../assets/logo.png";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -58,17 +59,9 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         {/* Logo + brand */}
         <a href="#" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-tr from-[#F4D03F] to-[#E6511F] shadow-lg">
-            <span className="text-xl font-bold text-[#1b1740]">ॐ</span>
-          </div>
-          <div className="leading-tight">
-            <p className="text-[11px] uppercase tracking-[0.25em] text-accent">
-              Astro Gopala
-            </p>
-            <p className="text-xs text-slate-100">
-              Divine Katha • Vedic Astrology
-            </p>
-          </div>
+        
+            <img src={logo} alt="Astro Gopala Logo" className="w-40" />
+        
         </a>
 
         {/* Desktop nav */}

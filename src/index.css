@@ -124,3 +124,38 @@ body {
   transform: translateY(-6px) scale(1.01);
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
 }
+
+
+/* place in your main stylesheet so Tailwind classes remain usable */
+
+/* slow float up/down */
+@keyframes zodiacFloat {
+  0% { transform: translateY(0) rotate(-6deg) }
+  50% { transform: translateY(-10px) rotate(-2deg) }
+  100% { transform: translateY(0) rotate(-6deg) }
+}
+
+/* slow spin for center symbol (if using) */
+@keyframes slowSpin {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}
+
+/* utility classes */
+.zodiac-float {
+  animation-name: zodiacFloat;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+/* slower spin */
+.animate-spin-slow {
+  animation: slowSpin 18s linear infinite;
+}
+
+/* responsive tweak: hide some icons on small screens for clarity */
+@media (max-width: 768px) {
+  .zodiac-hide-sm { display: none; }
+}
