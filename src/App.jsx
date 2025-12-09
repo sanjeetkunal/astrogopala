@@ -9,6 +9,7 @@ import MemoriesSection from "./components/MemoriesSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import InfoCardsSection from "./components/InfoCardsSection";
 import SiteFooter from "./components/SiteFooter";
+import SpiritualMusicPlayer from "./components/SpiritualMusicPlayer";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <InfoCardsSection />
         <SiteFooter />
       </div>
+      <SpiritualMusicPlayer />
     </div>
   );
 }
