@@ -30,62 +30,55 @@ const ZODIAC_ICONS = [
 /**
  * positionPreset array — desktop-first coordinates (percentage),
  * and size (tailwind width class) + opacity + animation delay.
- * Adjust numbers if you want different layout.
  */
 const positionPreset = [
-  { top: "6%", left: "8%", size: "w-14", opacity: 0.12, delay: 0 },
-  { top: "10%", left: "28%", size: "w-12", opacity: 0.14, delay: 0.8 },
-  { top: "4%", left: "48%", size: "w-12", opacity: 0.10, delay: 1.6 },
-  { top: "8%", left: "68%", size: "w-14", opacity: 0.12, delay: 0.4 },
-  { top: "12%", left: "86%", size: "w-12", opacity: 0.08, delay: 1.2 },
-  { top: "30%", left: "4%", size: "w-16", opacity: 0.12, delay: 0.6 },
-  { top: "28%", left: "28%", size: "w-14", opacity: 0.10, delay: 1.0 },
-  { top: "26%", left: "52%", size: "w-12", opacity: 0.08, delay: 0.2 },
-  { top: "34%", left: "72%", size: "w-16", opacity: 0.14, delay: 1.4 },
-  { top: "46%", left: "10%", size: "w-12", opacity: 0.09, delay: 0.9 },
-  { top: "50%", left: "44%", size: "w-14", opacity: 0.12, delay: 0.3 },
-  { top: "52%", left: "78%", size: "w-12", opacity: 0.08, delay: 1.1 },
+  { top: "6%", left: "8%", size: "w-14", opacity: 0.18, delay: 0 },
+  { top: "10%", left: "28%", size: "w-12", opacity: 0.2, delay: 0.8 },
+  { top: "4%", left: "48%", size: "w-12", opacity: 0.18, delay: 1.6 },
+  { top: "8%", left: "68%", size: "w-14", opacity: 0.2, delay: 0.4 },
+  { top: "12%", left: "86%", size: "w-12", opacity: 0.16, delay: 1.2 },
+  { top: "30%", left: "4%", size: "w-16", opacity: 0.2, delay: 0.6 },
+  { top: "28%", left: "28%", size: "w-14", opacity: 0.18, delay: 1.0 },
+  { top: "26%", left: "52%", size: "w-12", opacity: 0.16, delay: 0.2 },
+  { top: "34%", left: "72%", size: "w-16", opacity: 0.22, delay: 1.4 },
+  { top: "46%", left: "10%", size: "w-12", opacity: 0.18, delay: 0.9 },
+  { top: "50%", left: "44%", size: "w-14", opacity: 0.2, delay: 0.3 },
+  { top: "52%", left: "78%", size: "w-12", opacity: 0.16, delay: 1.1 },
 ];
 
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#0b0f2a] via-[#12163a] to-black text-white">
       {/* background zodiac icons layer */}
-     
-<div className="absolute inset-0 pointer-events-none z-0">
-  {/* subtle dark overlay so icons appear above the section background */}
-  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40" />
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40" />
 
-  {ZODIAC_ICONS.map((item, i) => {
-    const pos = positionPreset[i % positionPreset.length];
-    return (
-      <img
-        key={item.name}
-        src={item.icon}
-        alt={item.name}
-        /* 🟢 NOTICE: removed -z-10 here and set z-0 on parent */
-        className={`absolute ${pos.size} select-none transform transition-transform duration-[8000ms] ease-in-out zodiac-float`}
-        style={{
-          top: pos.top,
-          left: pos.left,
-          opacity: pos.opacity ?? 0.18, // increase default visibility
-          animationDelay: `${pos.delay}s`,
-          // keep a subtle rotate start
-          transform: "translateZ(0) rotate(-6deg)",
-          // optional: blend mode can be left or removed
-          mixBlendMode: "screen",
-          filter: "grayscale(8%) contrast(95%) blur(0px)",
-        }}
-      />
-    );
-  })}
-</div>
-
+        {ZODIAC_ICONS.map((item, i) => {
+          const pos = positionPreset[i % positionPreset.length];
+          return (
+            <img
+              key={item.name}
+              src={item.icon}
+              alt={item.name}
+              className={`absolute ${pos.size} select-none transform transition-transform duration-[8000ms] ease-in-out zodiac-float`}
+              style={{
+                top: pos.top,
+                left: pos.left,
+                opacity: pos.opacity,
+                animationDelay: `${pos.delay}s`,
+                transform: "translateZ(0) rotate(-6deg)",
+                mixBlendMode: "screen",
+                filter: "grayscale(8%) contrast(95%)",
+              }}
+            />
+          );
+        })}
+      </div>
 
       {/* ✨ floating spiritual glow circles */}
       <div className="absolute inset-0">
-        <span className="absolute top-20 left-10 h-40 w-40 rounded-full bg-accent/20 blur-3xl animate-pulse"></span>
-        <span className="absolute bottom-24 right-14 h-56 w-56 rounded-full bg-primary/20 blur-3xl animate-pulse"></span>
+        <span className="absolute top-20 left-10 h-40 w-40 rounded-full bg-accent/20 blur-3xl animate-pulse" />
+        <span className="absolute bottom-24 right-14 h-56 w-56 rounded-full bg-primary/20 blur-3xl animate-pulse" />
       </div>
 
       {/* 🕉 subtle mandala pattern */}
@@ -141,14 +134,18 @@ export default function HeroSection() {
           <div className="relative flex justify-center animate-float">
             <div className="relative h-[360px] w-[260px] rounded-3xl overflow-hidden border border-accent/30 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur shadow-2xl">
               {/* glowing aura */}
-              <span className="absolute inset-0 rounded-3xl ring-1 ring-accent/30 animate-pulse"></span>
+              <span className="absolute inset-0 rounded-3xl ring-1 ring-accent/30 animate-pulse" />
 
               <div className="flex h-full flex-col items-center justify-center gap-3 text-center px-4">
                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-tr from-accent to-primary text-4xl shadow-lg animate-spin-slow">
                   ॐ
                 </div>
-                <h3 className="font-heading text-lg text-accent">Astro Gopala Ji</h3>
-                <p className="text-[11px] text-slate-300">Vedic Astrologer & Bhagawat Katha Vachak</p>
+                <h3 className="font-heading text-lg text-accent">
+                  Astro Gopala Ji
+                </h3>
+                <p className="text-[11px] text-slate-300">
+                  Vedic Astrologer & Bhagawat Katha Vachak
+                </p>
 
                 <div className="mt-3 w-full border-t border-white/10 pt-3 text-[11px] text-slate-300">
                   “Where devotion meets divine wisdom.”
@@ -157,7 +154,7 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-      </div> {/* end container */}
+      </div>{/* end container */}
     </section>
   );
 }
